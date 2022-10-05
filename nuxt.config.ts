@@ -17,7 +17,8 @@ export default defineNuxtConfig({
 
     googleFonts: {
         families: {
-            Audiowide: true
+            Audiowide: true,
+            'Open+Sans': true,
         }
     }
 })
