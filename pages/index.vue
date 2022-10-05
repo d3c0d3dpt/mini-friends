@@ -63,25 +63,26 @@ const steps = [
 </script>
 
 <template lang="pug">
-.w-full(v-for="step in steps" :key="step.arrivalTime")
-    .card.card-compact.bg-base-100.shadow-xl
-        .card-body
-            pre {{ step.arrivalTime }}
-                span(v-if="step.departureTime")  - {{ step.departureTime }}
+section
+  .w-full(v-for="step in steps" :key="step.arrivalTime")
+      .card.card-compact.bg-base-100.shadow-xl
+          .card-body
+              pre {{ step.arrivalTime }}
+                  span(v-if="step.departureTime")  - {{ step.departureTime }}
 
-            h2.card-title {{ step.description }}
+              h2.card-title {{ step.description }}
 
-        a.btn.btn-accent.rounded-none(:href="step.locationLink" target="_blank") {{ step.location }}
+          a.btn.btn-accent.rounded-none(:href="step.locationLink" target="_blank") {{ step.location }}
 
-    .itinerary-container.mt-4.gap-4(v-if="step.routeLink")
-        vue-feather.arrow-1-sm(type="corner-down-right")
-        vue-feather.arrow-1(type="arrow-down")
+      .itinerary-container.mt-4.gap-4(v-if="step.routeLink")
+          vue-feather.arrow-1-sm(type="corner-down-right")
+          vue-feather.arrow-1(type="arrow-down")
 
-        .card.card-compact.bg-base-100.shadow-xl
-            a.btn.btn-wide.btn-ghost.rounded-none(:href="step.routeLink" target="_blank") Itinerário
+          .card.card-compact.bg-base-100.shadow-xl
+              a.btn.btn-wide.btn-ghost.rounded-none(:href="step.routeLink" target="_blank") Itinerário
 
-        vue-feather.arrow-2-sm(type="corner-right-down")
-        vue-feather.arrow-2(type="arrow-down")
+          vue-feather.arrow-2-sm(type="corner-right-down")
+          vue-feather.arrow-2(type="arrow-down")
 </template>
 
 <style>
