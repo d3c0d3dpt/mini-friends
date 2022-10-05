@@ -16,12 +16,12 @@ export default defineNuxtConfig({
   },
 
   googleFonts: {
-    download: true,
+    download: false,
     base64: false,
 
     families: {
       Audiowide: true,
-      "Open+Sans": true,
+      "Open Sans": true,
     },
   },
 });
