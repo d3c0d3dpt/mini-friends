@@ -32,7 +32,8 @@ jobs:
         with:
           start: yarn preview
 
-      - uses: actions/upload-artifact@v3
+      - if: failure()
+        uses: actions/upload-artifact@v3
         with:
           name: Cypress Screenshots
           path: |

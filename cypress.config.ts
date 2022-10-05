@@ -2,7 +2,7 @@ import { defineConfig } from "cypress";
 
 import { initPlugin } from "cypress-plugin-snapshots/plugin";
 
-const viewportWidth = 440;
+const viewportWidth = 1440;
 const viewportHeight = 900;
 
 export default defineConfig({
