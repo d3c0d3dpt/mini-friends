@@ -11,17 +11,12 @@ export default defineConfig({
       initPlugin(on, config);
 
       on("before:browser:launch", (browser, launchOptions) => {
-        if (browser.name === "electron" && browser.isHeadless) {
-          launchOptions.preferences.width = viewportWidth;
-          launchOptions.preferences.height = viewportHeight;
-          launchOptions.preferences.resizable = false;
-          return launchOptions;
-        }
-
         if (browser.name === "chrome" && browser.isHeadless) {
           launchOptions.args.push(
-            "--window-size=" + viewportWidth + "," + viewportHeight
+            "--window-size=" + viewportWidth + "," + viewportHeight,
+            "--font-render-hinting=none"
           );
+
           return launchOptions;
         }
       });
