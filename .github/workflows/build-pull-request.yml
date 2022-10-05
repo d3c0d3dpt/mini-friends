@@ -1,0 +1,35 @@
+name: Build on Pull Request
+
+on: pull_request
+
+jobs:
+  build_and_preview:
+    if: "${{ github.event.pull_request.head.repo.full_name == github.repository }}"
+
+    name: Build
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js 16
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16.x
+          cache: "yarn"
+
+      - name: Install dependencies
+        run: yarn install
+
+      - name: Run linters
+        run: yarn lint
+
+      - name: Build Nuxt
+        run: yarn build
+
+      - uses: cypress-io/github-action@v4
+        with:
+          browser: chrome
+          headed: true
+          start: yarn preview
