@@ -63,8 +63,8 @@ const steps = [
 </script>
 
 <template lang="pug">
-section
-  .w-full(v-for="step in steps" :key="step.arrivalTime")
+section.w-full.space-y-4
+  .space-y-4(v-for="step in steps" :key="step.arrivalTime")
       .card.card-compact.bg-base-100.shadow-xl
           .card-body
               pre {{ step.arrivalTime }}
@@ -74,7 +74,7 @@ section
 
           a.btn.btn-accent.rounded-none(:href="step.locationLink" target="_blank") {{ step.location }}
 
-      .itinerary-container.mt-4.gap-4(v-if="step.routeLink")
+      .itinerary-container.gap-4(v-if="step.routeLink")
           vue-feather.arrow-1-sm(type="corner-down-right")
           vue-feather.arrow-1(type="arrow-down")
 
