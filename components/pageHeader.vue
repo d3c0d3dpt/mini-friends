@@ -19,5 +19,6 @@ header.shadow-xl.bg-base-100
 <style>
 header .title {
   font-family: Audiowide, cursive;
+  font-family: "Gemunu Libre", sans-serif;
 }
 </style>

@@ -12,5 +12,6 @@
 <style>
 body {
   font-family: "Open Sans", sans-serif;
+  font-family: "Gemunu Libre", sans-serif;
 }
 </style>

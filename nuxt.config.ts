@@ -21,6 +21,7 @@ export default defineNuxtConfig({
     families: {
       Audiowide: true,
       "Open Sans": true,
+      "Gemunu Libre": true,
     },
   },
 });
