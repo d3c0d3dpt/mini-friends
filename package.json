@@ -9,7 +9,7 @@
     "lint": "yarn lint:eslint && yarn lint:stylelint",
     "lint:eslint": "eslint --ext .ts,.js,.vue .",
     "lint:stylelint": "stylelint **/*.{css,vue}",
-    "test": "cypress run --headed"
+    "test": "cypress run"
   },
   "devDependencies": {
     "@nuxtjs/color-mode": "^3.1.7",
