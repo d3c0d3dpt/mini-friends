@@ -17,7 +17,6 @@ export default defineNuxtConfig({
 
   googleFonts: {
     download: false,
-    base64: false,
 
     families: {
       Audiowide: true,

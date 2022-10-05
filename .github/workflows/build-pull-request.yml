@@ -36,8 +36,5 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: Cypress Screenshots
-          retention-days: 5
-          path: |
-            cypress/screenshots/*
-            cypress/e2e/__image_snapshots__/*.actual.png
-            cypress/e2e/__image_snapshots__/*.diff.png
+          path: cypress/e2e/__image_snapshots__/*
+          retention-days: 7
