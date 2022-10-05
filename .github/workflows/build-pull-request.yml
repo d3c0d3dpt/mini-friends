@@ -31,11 +31,8 @@ jobs:
       - uses: cypress-io/github-action@v4
         with:
           browser: chrome
+          headed: true
+          record: true
           start: yarn preview
-
-      - if: failure()
-        uses: actions/upload-artifact@v3
-        with:
-          name: Cypress Screenshots
-          path: cypress/e2e/__image_snapshots__/*
-          retention-days: 7
+        env:
+          CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
