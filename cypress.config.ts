@@ -6,8 +6,6 @@ const viewportWidth = 1440;
 const viewportHeight = 900;
 
 export default defineConfig({
-  projectId: "gpcfsf",
-
   e2e: {
     setupNodeEvents(on, config) {
       initPlugin(on, config);
