@@ -1,5 +1,5 @@
-<script setup>
-    import VueFeather from 'vue-feather';
+<script setup lang="ts">
+import VueFeather from "vue-feather";
 </script>
 
 <template lang="pug">
@@ -18,6 +18,6 @@ header.shadow-xl.bg-base-100
 
 <style>
 header .title {
-    font-family: 'Audiowide', cursive;
+  font-family: "Audiowide", cursive;
 }
 </style>

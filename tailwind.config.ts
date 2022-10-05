@@ -1,15 +1,13 @@
-import { Config } from 'tailwindcss'
+import { Config } from "tailwindcss";
 
-export default <Config> <unknown> {
-  plugins: [
-    require('daisyui'),
-  ],
+export default <Config>(<unknown>{
+  plugins: [require("daisyui")],
 
   theme: {
-    extend: {}
+    extend: {},
   },
 
   daisyui: {
-    themes: ['light', 'dark']
-  }
-}
+    themes: ["light", "dark"],
+  },
+});
