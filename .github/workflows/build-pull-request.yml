@@ -32,4 +32,7 @@ jobs:
         with:
           browser: chrome
           headed: true
+          record: true
           start: yarn preview
+        env:
+          CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
