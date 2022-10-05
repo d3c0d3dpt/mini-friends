@@ -16,6 +16,8 @@ export default defineNuxtConfig({
   },
 
   googleFonts: {
+    download: false,
+
     families: {
       Audiowide: true,
       "Open Sans": true,
