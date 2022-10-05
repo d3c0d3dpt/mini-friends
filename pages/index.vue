@@ -1,65 +1,65 @@
 <script setup>
-    import VueFeather from 'vue-feather';
+import VueFeather from "vue-feather";
 
-    const steps = [
-        {
-            arrivalTime: '09h15',
-            departureTime: '10h00',
-            description: 'Meet / Pequeno Almoço',
+const steps = [
+  {
+    arrivalTime: "09h15",
+    departureTime: "10h00",
+    description: "Meet / Pequeno Almoço",
 
-            location: 'Pedras Rubras',
-            locationLink: 'https://goo.gl/maps/bhUrCdE7fLxA4ty99',
+    location: "Pedras Rubras",
+    locationLink: "https://goo.gl/maps/bhUrCdE7fLxA4ty99",
 
-            routeLink: 'https://goo.gl/maps/eUZnVjgeJs27w8k99'
-        },
-        {
-            arrivalTime: '11h00',
-            departureTime: '11h30',
-            description: '1ª Paragem',
+    routeLink: "https://goo.gl/maps/eUZnVjgeJs27w8k99",
+  },
+  {
+    arrivalTime: "11h00",
+    departureTime: "11h30",
+    description: "1ª Paragem",
 
-            location: 'Santuário de Santa Luzia',
-            locationLink: 'https://goo.gl/maps/MBtQuBDoG3CGEMAK6',
+    location: "Santuário de Santa Luzia",
+    locationLink: "https://goo.gl/maps/MBtQuBDoG3CGEMAK6",
 
-            routeLink: 'https://goo.gl/maps/QEbKhAdQSz2hZFL27'
-        },
-        {
-            arrivalTime: '12h00',
-            departureTime: '14h00',
-            description: 'Almoço',
+    routeLink: "https://goo.gl/maps/QEbKhAdQSz2hZFL27",
+  },
+  {
+    arrivalTime: "12h00",
+    departureTime: "14h00",
+    description: "Almoço",
 
-            location: 'Caminha',
-            locationLink: 'https://goo.gl/maps/2uWUkjQuiaaVaYUL6',
+    location: "Caminha",
+    locationLink: "https://goo.gl/maps/2uWUkjQuiaaVaYUL6",
 
-            routeLink: 'https://goo.gl/maps/AjH1yTdFSQaVyjsm8'
-        },
-        {
-            arrivalTime: '14h20',
-            departureTime: '15h00',
-            description: '2ª Paragem',
+    routeLink: "https://goo.gl/maps/AjH1yTdFSQaVyjsm8",
+  },
+  {
+    arrivalTime: "14h20",
+    departureTime: "15h00",
+    description: "2ª Paragem",
 
-            location: 'Miradouro do Cervo',
-            locationLink: 'https://goo.gl/maps/aQiBqcSQowiESrfL8',
+    location: "Miradouro do Cervo",
+    locationLink: "https://goo.gl/maps/aQiBqcSQowiESrfL8",
 
-            routeLink: 'https://goo.gl/maps/Z6NUBCG3SzsSk585A'
-        },
-        {
-            arrivalTime: '16h00',
-            departureTime: '19h00',
-            description: 'Lanche / Fim de Tarde',
+    routeLink: "https://goo.gl/maps/Z6NUBCG3SzsSk585A",
+  },
+  {
+    arrivalTime: "16h00",
+    departureTime: "19h00",
+    description: "Lanche / Fim de Tarde",
 
-            location: 'Ponte de Lima',
-            locationLink: 'https://goo.gl/maps/LzvgE7ptR6Svh76e8',
+    location: "Ponte de Lima",
+    locationLink: "https://goo.gl/maps/LzvgE7ptR6Svh76e8",
 
-            routeLink: 'https://goo.gl/maps/B8jQGQTQ21JQqEyAA'
-        },
-        {
-            arrivalTime: '20h00',
-            description: 'Fim',
+    routeLink: "https://goo.gl/maps/B8jQGQTQ21JQqEyAA",
+  },
+  {
+    arrivalTime: "20h00",
+    description: "Fim",
 
-            location: 'Área de Serviço Coronado',
-            locationLink: 'https://goo.gl/maps/u1jxG6y3EaQoKQSg8'
-        }
-    ];
+    location: "Área de Serviço Coronado",
+    locationLink: "https://goo.gl/maps/u1jxG6y3EaQoKQSg8",
+  },
+];
 </script>
 
 <template lang="pug">
@@ -86,22 +86,22 @@
 
 <style>
 .itinerary-container {
-    @apply flex flex-col items-center justify-center sm:flex-row
+  @apply flex flex-col items-center justify-center sm:flex-row;
 }
 
 .itinerary-container > .arrow-1 {
-    @apply sm:hidden
+  @apply sm:hidden;
 }
 
 .itinerary-container > .arrow-1-sm {
-    @apply hidden -mt-2 sm:block
+  @apply hidden -mt-2 sm:block;
 }
 
 .itinerary-container > .arrow-2 {
-    @apply sm:hidden
+  @apply sm:hidden;
 }
 
 .itinerary-container > .arrow-2-sm {
-    @apply hidden mt-3 sm:block
+  @apply hidden mt-3 sm:block;
 }
 </style>
