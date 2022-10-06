@@ -1,9 +1,12 @@
-name: Deploy on Merge
+name: Deploy "main" branch
 
-on: pull_request
+on:
+  push:
+    branches:
+      - main
 
 jobs:
-  build_and_preview:
+  build_and_deploy:
     if: "${{ github.event.pull_request.head.repo.full_name == github.repository }}"
 
     name: Build

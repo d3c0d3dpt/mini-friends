@@ -3,7 +3,7 @@ name: Build on Pull Request
 on: pull_request
 
 jobs:
-  build_and_preview:
+  build_and_test:
     if: "${{ github.event.pull_request.head.repo.full_name == github.repository }}"
 
     name: Build
