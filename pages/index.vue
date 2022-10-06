@@ -5,6 +5,7 @@ const steps = [
   {
     arrivalTime: "09h15",
     departureTime: "10h00",
+    departureTimeStamp: new Date(2022, 9, 8, 10, 0, 0, 0),
     description: "Meet / Pequeno Almoço",
 
     location: "Pedras Rubras",
@@ -15,6 +16,7 @@ const steps = [
   {
     arrivalTime: "11h00",
     departureTime: "11h30",
+    departureTimeStamp: new Date(2022, 8, 8, 11, 30, 0, 0),
     description: "1ª Paragem",
 
     location: "Santuário de Santa Luzia",
@@ -25,6 +27,7 @@ const steps = [
   {
     arrivalTime: "12h00",
     departureTime: "14h00",
+    departureTimeStamp: new Date(2022, 9, 8, 14, 0, 0, 0),
     description: "Almoço",
 
     location: "Caminha",
@@ -35,6 +38,7 @@ const steps = [
   {
     arrivalTime: "14h20",
     departureTime: "15h00",
+    departureTimeStamp: new Date(2022, 9, 8, 15, 0, 0, 0),
     description: "2ª Paragem",
 
     location: "Miradouro do Cervo",
@@ -45,6 +49,8 @@ const steps = [
   {
     arrivalTime: "16h00",
     departureTime: "19h00",
+    departureTimeStamp: new Date(2022, 9, 8, 19, 0, 0, 0),
+
     description: "Lanche / Fim de Tarde",
 
     location: "Ponte de Lima",
@@ -54,6 +60,7 @@ const steps = [
   },
   {
     arrivalTime: "20h00",
+    departureTimeStamp: new Date(2022, 9, 8, 20, 0, 0, 0),
     description: "Fim",
 
     location: "Área de Serviço Coronado",
@@ -63,38 +70,97 @@ const steps = [
 </script>
 
 <template lang="pug">
-.w-full(v-for="step in steps" :key="step.arrivalTime")
-    .card.card-compact.bg-base-100.shadow-xl
+  
+section.w-full.space-y-4
+    .space-y-4(v-for="step in steps" :key="step.arrivalTime")
+      .a(v-if="step.departureTimeStamp > new Date()").card.card-compact.bg-base-100.shadow-xl
         .card-body
-            pre {{ step.arrivalTime }}
-                span(v-if="step.departureTime")  - {{ step.departureTime }}
+          pre {{ step.arrivalTime }}
+            span(v-if="step.departureTime")  - {{ step.departureTime }}
+  
+          h2.card-title {{ step.description }}
 
-            h2.card-title {{ step.description }}
+        a.btn.btn-accent.rounded-none.flex.gap-4( :href="step.locationLink" target="_blank")
+          vue-feather(type="map-pin")
+  
+          .grow.text-left {{ step.location }}
+  
+          vue-feather.opacity-50(type="external-link")
+      .b(v-if="step.departureTimeStamp < new Date()").opacity-20.card.card-compact.bg-base-100.shadow-xl
+        .card-body
+          pre {{ step.arrivalTime }}
+            span(v-if="step.departureTime")  - {{ step.departureTime }}
+  
+          h2.card-title {{ step.description }}
 
-        a.btn.btn-accent.rounded-none(:href="step.locationLink" target="_blank") {{ step.location }}
+        a.btn.btn-accent.rounded-none.flex.gap-4( :href="step.locationLink" target="_blank")
+          vue-feather(type="map-pin")
+  
+          .grow.text-left {{ step.location }}
+  
+          vue-feather.opacity-50(type="external-link")
 
-    .itinerary-container.mt-4.gap-4(v-if="step.routeLink")
-        vue-feather.arrow-1-sm(type="corner-down-right")
-        vue-feather.arrow-1(type="arrow-down")
 
-        .card.card-compact.bg-base-100.shadow-xl
-            a.btn.btn-wide.btn-ghost.rounded-none(:href="step.routeLink" target="_blank") Itinerário
-
-        vue-feather.arrow-2-sm(type="corner-right-down")
-        vue-feather.arrow-2(type="arrow-down")
+      .a(v-if="step.departureTimeStamp > new Date()")
+        .card.card-compact.bg-base-100.max-w-lg.mx-auto(v-if="step.routeLink")
+          a.btn.btn-block.btn-ghost.flex.gap-4(:href="step.routeLink" target="_blank")
+            vue-feather(type="map")
+    
+            .grow.text-left
+              div Itinerário: N201, N13
+              div 16KM
+    
+            vue-feather.opacity-50(type="external-link")
+      .b(v-if="step.departureTimeStamp < new Date()" ).opacity-20   
+        .card.card-compact.bg-base-100.max-w-lg.mx-auto(v-if="step.routeLink")
+          a.btn.btn-block.btn-ghost.flex.gap-4(:href="step.routeLink" target="_blank")
+            vue-feather(type="map")
+    
+            .grow.text-left
+              div Itinerário: N201, N13
+              div 16KM
+    
+            vue-feather.opacity-50(type="external-link")
 </template>
 
 <style>
+.card {
+  font-family: "Lato", sans-serif;
+}
+.card > .grey {
+  opacity: 50;
+}
+.a1 {
+  width: 35%;
+}
+.a2 {
+  width: 65%;
+
+  margin-left: 3px;
+}
+
+.button-group {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.button-group > .arrow-1 {
+  margin: 2px;
+  border-radius: 2%;
+
+  @apply sm:block;
+}
 .itinerary-container {
   @apply flex flex-col items-center justify-center sm:flex-row;
 }
 
 .itinerary-container > .arrow-1 {
-  @apply sm:hidden;
+  @apply sm:block;
 }
 
 .itinerary-container > .arrow-1-sm {
-  @apply hidden -mt-2 sm:block;
+  @apply hidden -mt-2 sm:hidden;
 }
 
 .itinerary-container > .arrow-2 {
@@ -102,6 +168,6 @@ const steps = [
 }
 
 .itinerary-container > .arrow-2-sm {
-  @apply hidden mt-3 sm:block;
+  @apply hidden mt-3 sm:hidden;
 }
 </style>
