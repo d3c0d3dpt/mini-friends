@@ -1,108 +1,119 @@
-<script setup>
-import VueFeather from "vue-feather";
+<script setup lang="ts">
+import type { Stop } from "../types/Stop";
 
-const steps = [
+const stops: Stop[] = [
   {
-    arrivalTime: "09h15",
-    departureTime: "10h00",
     description: "Meet / Pequeno Almoço",
 
-    location: "Pedras Rubras",
-    locationLink: "https://goo.gl/maps/bhUrCdE7fLxA4ty99",
+    timestamp: new Date(2022, 9, 8, 9, 15).getTime(),
 
-    routeLink: "https://goo.gl/maps/eUZnVjgeJs27w8k99",
+    location: {
+      description: "Pedras Rubras",
+      link: "https://goo.gl/maps/bhUrCdE7fLxA4ty99",
+    },
+
+    nextRoute: {
+      description: "N13, A28",
+      distance: 67,
+
+      link: "https://goo.gl/maps/eUZnVjgeJs27w8k99",
+
+      timestamp: new Date(2022, 9, 8, 10, 0).getTime(),
+    },
   },
   {
-    arrivalTime: "11h00",
-    departureTime: "11h30",
     description: "1ª Paragem",
 
-    location: "Santuário de Santa Luzia",
-    locationLink: "https://goo.gl/maps/MBtQuBDoG3CGEMAK6",
+    timestamp: new Date(2022, 9, 8, 11, 0).getTime(),
 
-    routeLink: "https://goo.gl/maps/QEbKhAdQSz2hZFL27",
+    location: {
+      description: "Santuário de Santa Luzia",
+      link: "https://goo.gl/maps/MBtQuBDoG3CGEMAK6",
+    },
+
+    nextRoute: {
+      description: "N13",
+      distance: 28,
+
+      link: "https://goo.gl/maps/QEbKhAdQSz2hZFL27",
+
+      timestamp: new Date(2022, 9, 8, 11, 30).getTime(),
+    },
   },
   {
-    arrivalTime: "12h00",
-    departureTime: "14h00",
     description: "Almoço",
 
-    location: "Caminha",
-    locationLink: "https://goo.gl/maps/2uWUkjQuiaaVaYUL6",
+    timestamp: new Date(2022, 9, 8, 12, 0).getTime(),
 
-    routeLink: "https://goo.gl/maps/AjH1yTdFSQaVyjsm8",
+    location: {
+      description: "Caminha",
+      link: "https://goo.gl/maps/2uWUkjQuiaaVaYUL6",
+    },
+
+    nextRoute: {
+      description: "N13",
+      distance: 17,
+
+      link: "https://goo.gl/maps/AjH1yTdFSQaVyjsm8",
+
+      timestamp: new Date(2022, 9, 8, 14, 0).getTime(),
+    },
   },
   {
-    arrivalTime: "14h20",
-    departureTime: "15h00",
     description: "2ª Paragem",
 
-    location: "Miradouro do Cervo",
-    locationLink: "https://goo.gl/maps/aQiBqcSQowiESrfL8",
+    timestamp: new Date(2022, 9, 8, 14, 20).getTime(),
 
-    routeLink: "https://goo.gl/maps/Z6NUBCG3SzsSk585A",
+    location: {
+      description: "Miradouro do Cervo",
+      link: "https://goo.gl/maps/aQiBqcSQowiESrfL8",
+    },
+
+    nextRoute: {
+      description: "N13, N201",
+      distance: 45,
+
+      link: "https://goo.gl/maps/Z6NUBCG3SzsSk585A",
+
+      timestamp: new Date(2022, 9, 8, 15, 0).getTime(),
+    },
   },
   {
-    arrivalTime: "16h00",
-    departureTime: "19h00",
     description: "Lanche / Fim de Tarde",
 
-    location: "Ponte de Lima",
-    locationLink: "https://goo.gl/maps/LzvgE7ptR6Svh76e8",
+    timestamp: new Date(2022, 9, 8, 16, 0).getTime(),
 
-    routeLink: "https://goo.gl/maps/B8jQGQTQ21JQqEyAA",
+    location: {
+      description: "Ponte de Lima",
+      link: "https://goo.gl/maps/LzvgE7ptR6Svh76e8",
+    },
+
+    nextRoute: {
+      description: "A3",
+      distance: 68,
+
+      link: "https://goo.gl/maps/B8jQGQTQ21JQqEyAA",
+
+      timestamp: new Date(2022, 9, 8, 19, 0).getTime(),
+    },
   },
   {
-    arrivalTime: "20h00",
     description: "Fim",
 
-    location: "Área de Serviço Coronado",
-    locationLink: "https://goo.gl/maps/u1jxG6y3EaQoKQSg8",
+    timestamp: new Date(2022, 9, 8, 20, 0).getTime(),
+
+    location: {
+      description: "Área de Serviço Coronado",
+      link: "https://goo.gl/maps/u1jxG6y3EaQoKQSg8",
+    },
   },
 ];
 </script>
 
 <template lang="pug">
 section.w-full.space-y-4
-  .space-y-4(v-for="step in steps" :key="step.arrivalTime")
-      .card.card-compact.bg-base-100.shadow-xl
-          .card-body
-              pre {{ step.arrivalTime }}
-                  span(v-if="step.departureTime")  - {{ step.departureTime }}
+  .space-y-4(v-for="stop in stops" :key="stop.timestamp")
+      stop-card(:stop="stop")
 
-              h2.card-title {{ step.description }}
-
-          a.btn.btn-accent.rounded-none(:href="step.locationLink" target="_blank") {{ step.location }}
-
-      .itinerary-container.gap-4(v-if="step.routeLink")
-          vue-feather.arrow-1-sm(type="corner-down-right")
-          vue-feather.arrow-1(type="arrow-down")
-
-          .card.card-compact.bg-base-100.shadow-xl
-              a.btn.btn-wide.btn-ghost.rounded-none(:href="step.routeLink" target="_blank") Itinerário
-
-          vue-feather.arrow-2-sm(type="corner-right-down")
-          vue-feather.arrow-2(type="arrow-down")
+      route-card(v-if="stop.nextRoute" :route="stop.nextRoute")
 </template>
-
-<style>
-.itinerary-container {
-  @apply flex flex-col items-center justify-center sm:flex-row;
-}
-
-.itinerary-container > .arrow-1 {
-  @apply sm:hidden;
-}
-
-.itinerary-container > .arrow-1-sm {
-  @apply hidden -mt-2 sm:block;
-}
-
-.itinerary-container > .arrow-2 {
-  @apply sm:hidden;
-}
-
-.itinerary-container > .arrow-2-sm {
-  @apply hidden mt-3 sm:block;
-}
-</style>
