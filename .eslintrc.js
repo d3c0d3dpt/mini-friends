@@ -9,6 +9,8 @@ module.exports = {
   ],
 
   rules: {
+    "@typescript-eslint/consistent-type-imports": "error",
+
     "prefer-template": "error",
 
     "vue/multi-word-component-names": "off",
