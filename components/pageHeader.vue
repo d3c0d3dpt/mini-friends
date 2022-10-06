@@ -9,10 +9,10 @@ header.shadow-xl.bg-base-100
             span.text-3xl MINI
             span.text-xl  & Friends
 
-        button.btn.btn-circle.btn-ghost(v-if="$colorMode.value === 'dark'" @click="$colorMode.value = 'light'")
+        button.btn.btn-circle.btn-ghost(v-if="$colorMode.value === 'dark'" aria-label="Change to light colors" @click="$colorMode.value = 'light'")
             vue-feather(type="sun")
 
-        button.btn.btn-circle.btn-ghost(v-if="$colorMode.value === 'light'" @click="$colorMode.value = 'dark'")
+        button.btn.btn-circle.btn-ghost(v-if="$colorMode.value === 'light'" aria-label="Change to dark colors" @click="$colorMode.value = 'dark'")
             vue-feather(type="moon")
 </template>
 
