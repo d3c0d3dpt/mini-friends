@@ -1,6 +1,11 @@
 name: Build on Pull Request
 
-on: pull_request
+on:
+  pull_request:
+
+  push:
+    branches:
+      - renovate-*
 
 jobs:
   build_and_test:
