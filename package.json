@@ -9,7 +9,8 @@
     "lint": "yarn lint:eslint && yarn lint:stylelint",
     "lint:eslint": "eslint --ext .ts,.js,.vue .",
     "lint:stylelint": "stylelint **/*.{css,vue}",
-    "test": "cypress run --browser chrome"
+    "test": "docker run -it -e CYPRESS_DOMAIN='host.docker.internal' -v $PWD:/app -w /app --rm cypress/included:10.9.0",
+    "test:local": "cypress open"
   },
   "devDependencies": {
     "@nuxtjs/color-mode": "^3.1.7",

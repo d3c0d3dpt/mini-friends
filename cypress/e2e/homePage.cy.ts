@@ -3,29 +3,31 @@ const TEST_THEMES = [
   ["Dark Theme", "dark"],
 ];
 
-describe("Rendered as expected", () => {
+const DOMAIN = Cypress.env("DOMAIN") || "localhost";
+
+describe("Home Page", () => {
   for (const [theme, colorMode] of TEST_THEMES) {
     describe(theme, () => {
       before(() => {
-        cy.visit("http://localhost:3000", {
+        cy.visit(`http://${DOMAIN}:3000`, {
           onBeforeLoad(win) {
             win.localStorage.setItem("nuxt-color-mode", colorMode);
           },
-        }).then(() => {
-          cy.get("header .btn.btn-circle svg");
         });
+
+        cy.get("header .btn.btn-circle svg");
       });
 
       it("Desktop", () => {
-        cy.viewport("macbook-15").then(() => {
-          cy.document().toMatchImageSnapshot();
-        });
+        cy.viewport("macbook-15");
+
+        cy.document().toMatchImageSnapshot({});
       });
 
       it("Mobile", () => {
-        cy.viewport("iphone-xr").then(() => {
-          cy.document().toMatchImageSnapshot();
-        });
+        cy.viewport("iphone-xr");
+
+        cy.document().toMatchImageSnapshot();
       });
     });
   }

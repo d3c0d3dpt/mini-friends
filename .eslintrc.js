@@ -9,6 +9,8 @@ module.exports = {
   ],
 
   rules: {
+    "prefer-template": "error",
+
     "vue/multi-word-component-names": "off",
   },
 };
