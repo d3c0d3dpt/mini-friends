@@ -28,11 +28,13 @@ jobs:
       - name: Build
         run: yarn build
 
-      - uses: cypress-io/github-action@v4
+      - name: Test
+        uses: cypress-io/github-action@v4
         with:
           start: yarn preview
 
       - if: failure()
+        name: Upload failure screenshots
         uses: actions/upload-artifact@v3
         with:
           name: Cypress Screenshots
