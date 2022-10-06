@@ -1,42 +1,31 @@
-# Nuxt 3 Minimal Starter
-
-Look at the [nuxt 3 documentation](https://v3.nuxtjs.org) to learn more.
+# Nuxt.js UI for [mini-and-friends.aferreira.xyz](https://mini-and-friends.aferreira.xyz/)
 
 ## Setup
 
-Make sure to install the dependencies:
-
 ```bash
-# yarn
-yarn install
+# install dependencies
+$ yarn install
 
-# npm
-npm install
-
-# pnpm
-pnpm install --shamefully-hoist
+# serve with hot reload at localhost:3000
+$ yarn dev
 ```
 
-## Development Server
-
-Start the development server on http://localhost:3000
+## Preview
 
 ```bash
-npm run dev
+# build for production
+$ yarn build
+
+# launch server
+$ yarn preview
 ```
 
-## Production
-
-Build the application for production:
+## Deployment
 
 ```bash
-npm run build
+# generate static project
+$ yarn generate
+
+# deploy using firebase cli
+$ firebase deploy
 ```
-
-Locally preview production build:
-
-```bash
-npm run preview
-```
-
-Checkout the [deployment documentation](https://v3.nuxtjs.org/guide/deploy/presets) for more information.
