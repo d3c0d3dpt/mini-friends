@@ -16,7 +16,7 @@ const steps = [
   {
     arrivalTime: "11h00",
     departureTime: "11h30",
-    departureTimeStamp: new Date(2022, 8, 8, 11, 30, 0, 0),
+    departureTimeStamp: new Date(2022, 9, 8, 11, 30, 0, 0),
     description: "1ª Paragem",
 
     location: "Santuário de Santa Luzia",
@@ -73,7 +73,7 @@ const steps = [
   
 section.w-full.space-y-4
     .space-y-4(v-for="step in steps" :key="step.arrivalTime")
-      .a(v-if="step.departureTimeStamp > new Date()").card.card-compact.bg-base-100.shadow-xl
+      .grey(v-if="step.departureTimeStamp > new Date()").card.card-compact.bg-base-100.shadow-xl
         .card-body
           pre {{ step.arrivalTime }}
             span(v-if="step.departureTime")  - {{ step.departureTime }}
@@ -86,7 +86,7 @@ section.w-full.space-y-4
           .grow.text-left {{ step.location }}
   
           vue-feather.opacity-50(type="external-link")
-      .b(v-if="step.departureTimeStamp < new Date()").opacity-20.card.card-compact.bg-base-100.shadow-xl
+      .not-grey(v-if="step.departureTimeStamp < new Date()").opacity-20.card.card-compact.bg-base-100.shadow-xl
         .card-body
           pre {{ step.arrivalTime }}
             span(v-if="step.departureTime")  - {{ step.departureTime }}
@@ -101,7 +101,7 @@ section.w-full.space-y-4
           vue-feather.opacity-50(type="external-link")
 
 
-      .a(v-if="step.departureTimeStamp > new Date()")
+      .grey(v-if="step.departureTimeStamp > new Date()")
         .card.card-compact.bg-base-100.max-w-lg.mx-auto(v-if="step.routeLink")
           a.btn.btn-block.btn-ghost.flex.gap-4(:href="step.routeLink" target="_blank")
             vue-feather(type="map")
@@ -111,7 +111,8 @@ section.w-full.space-y-4
               div 16KM
     
             vue-feather.opacity-50(type="external-link")
-      .b(v-if="step.departureTimeStamp < new Date()" ).opacity-20   
+
+      .not-grey(v-if="step.departureTimeStamp < new Date()" ).opacity-20   
         .card.card-compact.bg-base-100.max-w-lg.mx-auto(v-if="step.routeLink")
           a.btn.btn-block.btn-ghost.flex.gap-4(:href="step.routeLink" target="_blank")
             vue-feather(type="map")
