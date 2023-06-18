@@ -17,7 +17,7 @@
     "@nuxtjs/eslint-config-typescript": "11.0.0",
     "@nuxtjs/google-fonts": "3.0.1",
     "@nuxtjs/tailwindcss": "5.3.5",
-    "cypress": "10.9.0",
+    "cypress": "10.11.0",
     "cypress-plugin-snapshots": "1.4.4",
     "daisyui": "2.31.0",
     "eslint": "8.25.0",
