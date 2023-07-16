@@ -3749,12 +3749,12 @@ eslint-plugin-unicorn@^43.0.2:
     semver "^7.3.7"
     strip-indent "^3.0.0"
 
-eslint-plugin-vue-pug@0.5.4:
-  version "0.5.4"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-vue-pug/-/eslint-plugin-vue-pug-0.5.4.tgz#d852faf856595fa4257ffb257356295799445bcc"
-  integrity sha512-4/EHB8B4cSLBJkaV4D+fivbZMiw/+Ios0BLJGIHm9mibZw1Yp5hp7xai/5iSKlnPYpsaFCwtzed9WGiUwOrBdQ==
+eslint-plugin-vue-pug@0.6.0:
+  version "0.6.0"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-vue-pug/-/eslint-plugin-vue-pug-0.6.0.tgz#1a80cb26d23996e92d19644816e5f9c44fa06d56"
+  integrity sha512-VFCdVctcEob2/sEWBeAVhWPXACUfLpqWpnhTK7tHXuDF+0GM2N3BeiCG0cneFvleI59B/NouGX80GXB6NGrgvA==
   dependencies:
-    vue-eslint-parser-template-tokenizer-pug "^0.4.9"
+    vue-eslint-parser-template-tokenizer-pug "^0.4.10"
 
 eslint-plugin-vue@9.15.1:
   version "9.15.1"
@@ -8872,10 +8872,10 @@ vue-devtools-stub@^0.1.0:
   resolved "https://registry.yarnpkg.com/vue-devtools-stub/-/vue-devtools-stub-0.1.0.tgz#a65b9485edecd4273cedcb8102c739b83add2c81"
   integrity sha512-RutnB7X8c5hjq39NceArgXg28WZtZpGc3+J16ljMiYnFhKvd8hITxSWQSQ5bvldxMDU6gG5mkxl1MTQLXckVSQ==
 
-vue-eslint-parser-template-tokenizer-pug@^0.4.9:
-  version "0.4.9"
-  resolved "https://registry.yarnpkg.com/vue-eslint-parser-template-tokenizer-pug/-/vue-eslint-parser-template-tokenizer-pug-0.4.9.tgz#2e328e5f3cb4d5677171847f696b44ef155995f2"
-  integrity sha512-Rt5dI7OJG9q7EvXIlcYHqzU39RuHxq7KLjjJ/gxDNj3pE1GU5iIbXGZMLhdTPD8CTCHmdhV/V7m7XmclawgjKg==
+vue-eslint-parser-template-tokenizer-pug@^0.4.10:
+  version "0.4.10"
+  resolved "https://registry.yarnpkg.com/vue-eslint-parser-template-tokenizer-pug/-/vue-eslint-parser-template-tokenizer-pug-0.4.10.tgz#5e37a3ecd66d6cabf68591ae7d38088010e8e0ab"
+  integrity sha512-Npzjna9PUJzIal/o7hOo4D7dF4hqjHwTafBtLgdtja2LZuCc4UT5BU7dyYJeKb9s1SnCFBflHMg3eFA3odq6bg==
   dependencies:
     pug-lexer "^5.0.1"
 
