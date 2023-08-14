@@ -21,7 +21,7 @@
     "cypress-plugin-snapshots": "1.4.4",
     "daisyui": "2.52.0",
     "eslint": "8.47.0",
-    "eslint-config-prettier": "8.9.0",
+    "eslint-config-prettier": "8.10.0",
     "eslint-plugin-prettier": "4.2.1",
     "eslint-plugin-vue": "9.17.0",
     "eslint-plugin-vue-pug": "0.6.0",
