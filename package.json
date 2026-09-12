@@ -14,7 +14,7 @@
   },
   "devDependencies": {
     "@nuxtjs/color-mode": "3.3.0",
-    "@nuxtjs/eslint-config-typescript": "11.0.0",
+    "@nuxtjs/eslint-config-typescript": "12.1.0",
     "@nuxtjs/google-fonts": "3.0.2",
     "@nuxtjs/tailwindcss": "5.3.5",
     "cypress": "10.11.0",
